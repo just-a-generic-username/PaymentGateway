@@ -1,6 +1,7 @@
 <?php
 
 namespace Model;
+session_start();
 
 class User {
     public static function getallplans(){

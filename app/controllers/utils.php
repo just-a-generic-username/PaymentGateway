@@ -67,6 +67,10 @@ class Utils {
         ));
     }
 
-
+    public static function renderPaymentSuccessful(){
+        echo \View\Loader::make()->render("templates/paymentsuccessful.twig", array(
+          
+        ));
+    }
 
 }

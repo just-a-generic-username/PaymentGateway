@@ -16,22 +16,27 @@ class MakePayment {
         
         $number = $_POST["phonenumber"];
         $password = $_POST["password"];
-        $accountno = $_POST["accountno"];
+        $email = $_POST["email"];
         $otp = $_POST["otp"];
 
 
-        $isSetAll =  \Controller\Utils::isSetAll( $number, $password, $accountno );
+        $isSetAll =  \Controller\Utils::isSetAll( $number, $password, $email );
 
 
         if( !$isSetAll )
         {
             $isSetOtp =  \Controller\Utils::isSetAll($otp );
              if($isSetOtp){
-                
+                $matched=\Model\Bank::matchcredentials( $password, $email, $otp );
+                if($matched){
+                    \Controller\Utils::renderPaymentSuccessful();
+                }
+
              }else{
-                \Controller\Utils::isSetAll( $number, $password, $accountno );
+                \Model\Bank::generateotp( $password, $email,  );
              }        
-            \Controller\Utils::renderBankHome();
+           
+           //  \Controller\Utils::renderBankHome();
             
         }
         else{

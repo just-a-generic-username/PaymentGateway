@@ -1,6 +1,7 @@
 <?php
 
 namespace Model;
+session_start();
 
 class General {
     public static function create($name, $email, $password) {
