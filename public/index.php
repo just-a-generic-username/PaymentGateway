@@ -13,6 +13,7 @@ Toro::serve(array(
     "/logout" => "Controller\Logout" ,
     "/bankreg" => "Controller\BankReg" ,
     "/chooseplan" => "Controller\ChoosePlan" ,
-    "/makepayment" => "Controller\MakePayment"
+    "/makepayment" => "Controller\MakePayment",
+    "/paymentsuccess" => "Controller\PaymentSuccessful"
 ));
 
