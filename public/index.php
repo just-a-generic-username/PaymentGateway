@@ -14,6 +14,9 @@ Toro::serve(array(
     "/bankreg" => "Controller\BankReg" ,
     "/chooseplan" => "Controller\ChoosePlan" ,
     "/makepayment" => "Controller\MakePayment",
-    "/paymentsuccess" => "Controller\PaymentSuccessful"
+    "/paymentsuccess" => "Controller\PaymentSuccessful",
+    "/showtransactions" => "Controller\ShowTransactions",
+    "/depositmoney" => "Controller\DepositMoney",
+
 ));
 
