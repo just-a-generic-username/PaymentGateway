@@ -32,9 +32,11 @@ class User {
 
     public static function get_all_userdata(){
         $db = \DB::get_instance();
-        $stmt = $db->prepare("SELECT * FROM users WHERE id = ?");
-        $stmt-> execute([$_SESSION['userid']]);
+        $stmt = $db->prepare("SELECT * FROM transactions WHERE email = ?");
+        $stmt-> execute([$_SESSION['email']]);
+        
         $rows = $stmt->fetchAll();
+      //  var_dump($rows);
         return $rows;
     }
 
@@ -48,6 +50,7 @@ class User {
         if(password_verify($password ,$rows[0]['password'])){
             session_start();
             $_SESSION['userid'] = $rows[0]['id'];
+            $_SESSION['email'] = $email;
            //  var_dump($_SESSION['userid']);
         }else{
             echo('failed');

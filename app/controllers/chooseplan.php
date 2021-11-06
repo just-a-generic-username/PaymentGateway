@@ -12,8 +12,9 @@ session_start();
 
     public function post() {
         $planid = $_POST["planid"];
-        
+        var_dump($_SESSION["otp"]);
         // \Model\Admin::approvereq( $requestid );
+        var_dump($planid);
         \Controller\Utils::renderMakePayment($planid);
         
 

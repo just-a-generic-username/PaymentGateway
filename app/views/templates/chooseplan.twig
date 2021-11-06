@@ -4,55 +4,6 @@
 
 {% block body %}
 
-<div class="jumbotron">
-  <h1 class="display-4">Register Bank Account</h1>
-
-  <form action="/bankreg" method="POST">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter Full Name">
-  </div>
-    <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  {% if alreadyexist %}
-  <p>
-    <em> Email already in use</em>
-  </p>
-  {% endif %}
-  
-</form>
-  
-</div>
-
-
-{# <o1>
-  {% for post in posts %}
-  <li>
-    <a href="/post/{{ post.id }}">{{ post.name }}</a>
-    <a href="/post/{{ post.id }}">{{ post.email }}</a>
-    <a href="/post/{{ post.id }}">{{ post.password }}</a>
-  </li>
-  <div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-    {{post.id}}
-  </a>
-  <a href="/post/{{ post.id }}" class="list-group-item list-group-item-action">{{ post.name }}</a>
-  <a href="/post/{{ post.id }}" class="list-group-item list-group-item-action">{{ post.email }}</a>
-  <a href="/post/{{ post.id }}" class="list-group-item list-group-item-action">{{ post.password }}</a>
-  </div>
-  {% endfor %} 
-
-</o1> #}
 
 
 <div class="jumbotron">
@@ -78,7 +29,7 @@
             <form action="/chooseplan" method="POST">
               <div class="form-group row">
               <div class="col-sm-10">
-                <input type="hidden" class="form-control" id="planid" name="planid" value = {{post.planid}}>
+                <input type="hidden" class="form-control" id="planid" name="planid" value = {{plan.plan_id}}>
               </div>
               </div>
               <button type="submit" class="btn btn-primary mb-2"> Pay </button>

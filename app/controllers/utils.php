@@ -27,10 +27,10 @@ class Utils {
     }
 
     public static function renderClientHome(){
+        $transactions= \Model\User::get_all_userdata();
+       // var_dump($transactions);
         echo \View\Loader::make()->render("templates/clienthome.twig" ,array(
-            // "bookdata" => \Model\User::get_allbooks(),
-            // "pendingrequests" =>  \Model\User::showpendingrequests(),
-            // "ownedbooks" =>  \Model\User::get_ownedbooks(),
+            "transactions" => \Model\User::get_all_userdata(),
             )); 
     }
 
@@ -62,14 +62,21 @@ class Utils {
 
     public static function renderMakePayment($planid){
         echo \View\Loader::make()->render("templates/makepayment.twig", array(
-            "plans" => \Model\User::getallplans(),
+            "planid" => $planid,
             "otpexist" => $_SESSION["otpexist"],
         ));
     }
 
-    public static function renderPaymentSuccessful(){
+    public static function renderPaymentSuccessful($matched, $balenough){
         echo \View\Loader::make()->render("templates/paymentsuccessful.twig", array(
-          
+          "matched" => $matched,
+          "balenough" => $balenough,
+        ));
+    }
+
+    public static function renderDepositMoney($amount){
+        echo \View\Loader::make()->render("templates/depositmoney.twig", array(
+          "amount" => $amount,
         ));
     }
 
