@@ -20,12 +20,12 @@ class DepositMoney {
     //    var_dump($password);
     //    var_dump($email);
         $isSetAll =  \Controller\Utils::isSetAll( $email, $password, $amount);
-        var_dump($isSetAll);
+     //   var_dump($isSetAll);
         if($isSetAll )
         {
             $amount = \Model\Bank::depositmoney( $email, $password , $amount);
             \Controller\Utils::renderDepositMoney( $amount);
-            var_dump($amount);
+         //   var_dump($amount);
         }
         
         

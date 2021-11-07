@@ -36,16 +36,19 @@ class MakePayment {
                     \Controller\Utils::renderPaymentSuccessful($matched, $balenough);
                     \Model\Bank::inserttransaction( $password, $email, $planid );
                 
-            }
+                }
 
              }else{
                 \Model\Bank::generateotp( $password, $email );
+                \Controller\Utils::renderMakePayment(1);
              }        
            
            //  \Controller\Utils::renderBankHome();
             
         }
         else{
+            
+            
             header("Location: /chooseplan");
         }
 

@@ -7,25 +7,28 @@
 <div class="jumbotron">
   <h1 class="display-4">Bank Home</h1>
 
-  <form action="/adminhome" method="POST">
-  <div class="form-group">
-    <label for="name">Title</label>
-    <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" placeholder="Enter Title">
-  </div>
-    <label for="exampleInputEmail1">Number of Copies</label>
-    <input type="number" class="form-control" id="noofcopies" name="noofcopies" aria-describedby="emailHelp" placeholder="1">
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  {% if alreadyexist %}
-  <p>
-    <em> Email already in use</em>
-  </p>
-  {% endif %}
-  
-</form>
+   <table class="table table-bordered table-dark">
+      <thead>
+          <tr>
+          <th scope="col">Account Number</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Balance</th>
+          {# <th scope="col">Transaction Time</th> #}
+          </tr>
+      </thead>
+    <tbody> 
+     
+      <tr>
+        <th scope="row">{{account.accountno}}</th>
+        <td> {{account.name}} </td>
+        <td>{{account.email}}</td>
+        <td> {{account.balance}} </td>
+      </tr>
+     
+    </tbody>
+    
+  </table>
 
 
 

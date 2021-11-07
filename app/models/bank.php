@@ -39,7 +39,7 @@ class Bank {
         if(password_verify($password ,$rows[0]['password'])){
             session_start();
             $_SESSION['bankid'] = $rows[0]['accountno'];
-            var_dump($_SESSION['bankid']);
+     //       var_dump($_SESSION['bankid']);
         }else{
             echo('failed');
         }
@@ -116,12 +116,12 @@ class Bank {
         $row2 = $stmt2->fetch();
         $cost = (int)$row2["cost"];
     
-       var_dump($cost);
+     //  var_dump($cost);
       
 
        $balance = (int)$row["balance"];
 
-       var_dump($balance);
+     //  var_dump($balance);
         if($cost< $balance){
             echo ("inside method");
             $cost=$cost-$cost-$cost;
@@ -141,7 +141,20 @@ class Bank {
 
 
 
+    public static function get_usersata() {
+        $db = \DB::get_instance();
+       
+        $stmt2 = $db->prepare("SELECT * FROM bank WHERE accountno = ? ");
+        $stmt2-> execute([$_SESSION['bankid']]);
+        $row = $stmt2->fetch();
 
+        
+       
+        return $row;
+
+       
+      
+    }
 
 
     public static function depositmoney( $email, $password, $amount) {

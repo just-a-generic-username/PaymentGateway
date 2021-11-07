@@ -15,7 +15,7 @@ class Utils {
 
     public static function renderBankHome(){
         echo \View\Loader::make()->render("templates/bankhome.twig", array(
-           
+           "account" => \Model\Bank::get_usersata(),
         ));
     }
 
