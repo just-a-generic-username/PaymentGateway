@@ -1,4 +1,4 @@
-# Library using MVC Framework in PHP.
+<!-- # Library using MVC Framework in PHP.
 
 1. Clone this repository by `git clone https://github.com/ZainulNiaz/LibraryMVC`
 2. `cd LibraryMVC`
@@ -8,3 +8,4 @@
 5. `sudo a2ensite enable library.local.conf`
 6. `sudo a2enmod rewrite`
 7. `sudo service apache2 reload`
+ -->
